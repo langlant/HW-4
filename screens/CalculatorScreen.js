@@ -3,6 +3,9 @@ import { StyleSheet, Text, Keyboard, TouchableOpacity, View, TouchableWithoutFee
 import { Button, Input } from "react-native-elements";
 import { Feather } from "@expo/vector-icons";
 import {initGeoCalcDb, writeData, setupDataListener} from '../helpers/fb-geocalculator';
+
+
+
 const CalculatorScreen = ({ route, navigation }) => {
   const [state, setState] = useState({
     lat1: "",
@@ -135,6 +138,18 @@ const CalculatorScreen = ({ route, navigation }) => {
         }
       >
         <Feather style={{ marginRight: 10 }} name="settings" size={24} color='#fff' />
+      </TouchableOpacity>
+    ),
+    headerLeft: () => (
+      <TouchableOpacity
+        onPress={() => {
+          // navigate back with new settings.
+          navigation.navigate('History', {
+
+          });
+        }}
+      >
+        <Text style={styles.headerButton}> History </Text>
       </TouchableOpacity>
     ),
   });
