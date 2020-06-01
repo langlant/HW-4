@@ -15,7 +15,7 @@ export default function App() {
         <Stack.Navigator screenOptions={navStyling}>
           <Stack.Screen name="Geo Calculator" component={CalculatorScreen} />
           <Stack.Screen name="Settings" component={SettingsScreen} />\
-          <Stack.Screen name="History" component={SettingsScreen}/>
+          <Stack.Screen name="History" component={HistoryScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
   );
