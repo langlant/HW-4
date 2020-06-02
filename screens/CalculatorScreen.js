@@ -18,6 +18,8 @@ const CalculatorScreen = ({ route, navigation }) => {
   const [bearingUnits, setBearingUnits] = useState("Degrees");
   const [distanceUnits, setDistanceUnits] = useState("Kilometers");
 
+  const [history, setHistory] = useState([]);
+
   const initialField = useRef(null);
 
   useEffect(() => {
@@ -142,6 +144,7 @@ const CalculatorScreen = ({ route, navigation }) => {
         distance: `${round(dist*dConv,3)} ${dUnits}`,
         bearing: `${round(bear*bConv, 3)} ${bUnits}`,
       });
+      setHistory([...history, { p1, p2, dUnits, bUnits, timestamp: Date.now() }]);
     }
   }
 
@@ -182,7 +185,7 @@ const CalculatorScreen = ({ route, navigation }) => {
         onPress={() => {
           // navigate back with new settings.
           navigation.navigate('History', {
-            lat1: lat1, lon1: lon1, lat2: lat2, lon2: lon2
+            currentHistory: history 
           });
         }}
       >
