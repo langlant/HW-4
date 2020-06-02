@@ -26,8 +26,8 @@ const HistoryScreen = ({ route, navigation }) => {
 
     return(
         <FlatList  
-            keyExtractor={(coordinate) => coordinate.coord}
-            data = {history}
+            keyExtractor={(history) => coordinate.coord}
+            data = {coordinate}
             renderItem={({index, coordinate}) =>{
                 return(
                     <Text> {coordinate.coord}</Text>
