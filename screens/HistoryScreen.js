@@ -7,24 +7,30 @@ import { FlatList } from "react-native-gesture-handler";
 
 const HistoryScreen = ({ route, navigation }) => {
     
-    const coords = [
-        {coord: lat1},
-        {coord: lon1},
-        {coord: lat2},
-        {coord: lat2},
-    ];
+    const hLat1 = route.params.lat1;
+    const hLon1 = route.params.lon1;
+    const hLat2 = route.params.lat2;
+    const hLon2 = route.params.lon2;
 
-    const [useState, setState] = useState(coords);
+    const [history, setHistory] = useState(coordinate);
+
+
+    const coordinate = [
+        { coord: hLat1 },
+        { coord: hLon1 },
+        { coord: hLat2 },
+        { coord: hLon2 },
+    ]
 
 
 
     return(
         <FlatList  
-            keyExtractor={(coord) => coord.coord}
-            data = {useState}
-            renderItem={({index, useState}) =>{
+            keyExtractor={(coordinate) => coordinate.coord}
+            data = {history}
+            renderItem={({index, coordinate}) =>{
                 return(
-                    <Text> {coord.coord}</Text>
+                    <Text> {coordinate.coord}</Text>
                 )
             }}
             />
