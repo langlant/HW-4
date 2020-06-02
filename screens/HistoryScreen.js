@@ -6,18 +6,17 @@ import CalculatorScreen from './CalculatorScreen';
 import { FlatList } from "react-native-gesture-handler";
 
 const HistoryScreen = ({ route, navigation }) => {
-    const [useState, setState] = useState({
-        lat1= route.parans,
-        lon1 = route.params,
-        lat2 = route.params,
-        lon2 = route.params
-    });
+    const [lat1, lon1, lat2, lon2] = route.params;
+
     return(
         <FlatList  
             keyExtractor={(useState) => item.text}
             data = {useState}
             renderItem={({index, useState}) =>{
-                <Text> {useState.text} </Text>
+                <Text> {lat1.text} </Text>
+                <Text> {lon1.text} </Text>
+                <Text> {lat2.text} </Text>
+                <Text> {lon2.text} </Text>
             }}
             />
     );
