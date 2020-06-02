@@ -28,6 +28,11 @@ const CalculatorScreen = ({ route, navigation }) => {
     }
   }, [route.params?.selectedDistanceUnits]);
 
+  useEffect(() =>{
+    if(route.params?.selectedCoordinates){
+      
+    }
+  })
   useEffect(() => {
     try {
       initGeoCalcDb();
@@ -36,6 +41,7 @@ const CalculatorScreen = ({ route, navigation }) => {
     }
     setupDataListener('score');
   }, []);
+
   // Converts from degrees to radians.
   function toRadians(degrees) {
     return (degrees * Math.PI) / 180;
@@ -145,7 +151,7 @@ const CalculatorScreen = ({ route, navigation }) => {
         onPress={() => {
           // navigate back with new settings.
           navigation.navigate('History', {
-
+            lat1, lon1, lat2, lon2
           });
         }}
       >
