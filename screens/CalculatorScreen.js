@@ -145,6 +145,18 @@ const CalculatorScreen = ({ route, navigation }) => {
       >
         <Feather style={{ marginRight: 10 }} name="settings" size={24} color='#fff' />
       </TouchableOpacity>
+    ),headerLeft: () => (
+      <TouchableOpacity
+        onPress={() => {
+          // navigate back with new settings.
+          navigation.navigate('History', {
+            selectedDistanceUnits,
+            selectedBearingUnits,
+          });
+        }}
+      >
+        <Text style={styles.headerButton}> Save </Text>
+      </TouchableOpacity>
     ),
     headerLeft: () => (
       <TouchableOpacity
