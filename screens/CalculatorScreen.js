@@ -25,15 +25,33 @@ const CalculatorScreen = ({ route, navigation }) => {
       setDistanceUnits(route.params.selectedDistanceUnits);
       setBearingUnits(route.params.selectedBearingUnits);
       doCalculation(route.params.selectedDistanceUnits, route.params.selectedBearingUnits);
-      setState(route.params.lat1, route.params.lon1, route.params.lat2, route.params.lon2);
     }
   }, [route.params?.selectedDistanceUnits]);
 
-  useEffect(() =>{
-    if(route.params?.selectedCoordinates){
-      
+  useEffect(() => {
+    if (route.params?.lat1){
+      useState(route.params.lat1);
     }
-  })
+  }, [route.params?.route.params?.route.params.lat1]);
+
+  useEffect(() => {
+    if (route.params?.lat2){
+      useState(route.params.lat2);
+    }
+  }, [route.params?.route.params?.route.params.lat2]);
+
+  useEffect(() => {
+    if (route.params?.lon1){
+      useState(route.params.lon1);
+    }
+  }, [route.params?.route.params?.route.params.lon1]);
+
+  useEffect(() => {
+    if (route.params?.lon2){
+      useState(route.params.lon2);
+    }
+  }, [route.params?.route.params?.route.params.lon2]);
+
   useEffect(() => {
     try {
       initGeoCalcDb();
