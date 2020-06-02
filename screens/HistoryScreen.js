@@ -13,10 +13,7 @@ const HistoryScreen = ({ route, navigation }) => {
             keyExtractor={(useState) => item.text}
             data = {useState}
             renderItem={({index, useState}) =>{
-                <Text> {lat1.text} </Text>
-                <Text> {lon1.text} </Text>
-                <Text> {lat2.text} </Text>
-                <Text> {lon2.text} </Text>
+
             }}
             />
     );
