@@ -182,7 +182,7 @@ const CalculatorScreen = ({ route, navigation }) => {
         onPress={() => {
           // navigate back with new settings.
           navigation.navigate('History', {
-            lat1, lon1, lat2, lon2
+            lat1: lat1, lon1: lon1, lat2: lat2, lon2: lon2
           });
         }}
       >
