@@ -25,6 +25,7 @@ const CalculatorScreen = ({ route, navigation }) => {
       setDistanceUnits(route.params.selectedDistanceUnits);
       setBearingUnits(route.params.selectedBearingUnits);
       doCalculation(route.params.selectedDistanceUnits, route.params.selectedBearingUnits);
+      setState(route.params.lat1, route.params.lon1, route.params.lat2, route.params.lon2);
     }
   }, [route.params?.selectedDistanceUnits]);
 
