@@ -29,7 +29,7 @@ const CalculatorScreen = ({ route, navigation }) => {
       doCalculation(route.params.selectedDistanceUnits, route.params.selectedBearingUnits);
     }
   }, [route.params?.selectedDistanceUnits]);
-
+/*
   useEffect(() => {
     if (route.params?.lat1){
       useState(route.params.lat1);
@@ -53,7 +53,7 @@ const CalculatorScreen = ({ route, navigation }) => {
       useState(route.params.lon2);
     }
   }, [route.params?.lon2]);
-
+*/
   useEffect(() => {
     try {
       initGeoCalcDB();

@@ -9,30 +9,14 @@ const HistoryScreen = ({ route, navigation }) => {
 
 
     const { currentHistory } = route.params;
-    
-    // const hLat1 = route.params.lat1;
-    // const hLon1 = route.params.lon1;
-    // const hLat2 = route.params.lat2;
-    // const hLon2 = route.params.lon2;
-
-    // const [history, setHistory] = useState(coordinate);
-
-
-    // const coordinate = [
-    //     { coord: hLat1 },
-    //     { coord: hLon1 },
-    //     { coord: hLat2 },
-    //     { coord: hLon2 },
-    // ]
-
 
     const rHistory = ({item, index}) =>{
         return (
     
         <TouchableHighlight onPress={()=> buttonPress(item)}>
             <View>
-                 <Text> Start: {item.state.lat1}</Text>
-                 <Text> End: {item.state.lat2}</Text>
+                 <Text> Start: {item.p1.lat1}, {item.p1.lon1}</Text>
+                 <Text> End: {item.p2.lat2}, {item.p2.lon2}</Text>
                  <Text>Time Stamp: {item.timestamp}</Text>
             </View>
         </TouchableHighlight>
