@@ -43,7 +43,7 @@ const HistoryScreen = ({ route, navigation }) => {
         <FlatList  
             keyExtractor={(item) => item.timestamp}
             data = {currentHistory}
-            renderItem={History}
+            renderItem={rHistory}
             />
     );
 
