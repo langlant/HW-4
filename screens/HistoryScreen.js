@@ -7,6 +7,7 @@ import { FlatList } from "react-native-gesture-handler";
 
 const HistoryScreen = ({ route, navigation }) => {
 
+
     const { currentHistory } = route.params;
     
     // const hLat1 = route.params.lat1;
@@ -32,7 +33,7 @@ const HistoryScreen = ({ route, navigation }) => {
             data = {currentHistory}
             renderItem={({index, item}) =>{
                 return(
-                    <Text> {item.timestamp}</Text>
+                    <Text> {item.timestamp} </Text>
                 )
             }}
             />
