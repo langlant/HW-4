@@ -56,7 +56,7 @@ const CalculatorScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     try {
-      initGeoCalc();
+      initGeoCalcDB();
     } catch (err) {
       console.log(err);
     }
