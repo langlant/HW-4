@@ -31,8 +31,8 @@ const HistoryScreen = ({ route, navigation }) => {
     
         <TouchableHighlight onPress={()=> buttonPress(item)}>
             <View>
-                 <Text>{' '} Start: {item.lat1}, {item.lon1}</Text>
-                 <Text>{' '} End: {item.lat2}, {item.lon2}</Text>
+                 <Text>{' '} Start: {item.p1}</Text>
+                 <Text>{' '} End: {item.p2}</Text>
                  <Text>{item.timestamp}</Text>
         </View>
         </TouchableHighlight>
