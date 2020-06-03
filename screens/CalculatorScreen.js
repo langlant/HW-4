@@ -2,7 +2,7 @@ import React, { useState, useRef,   useEffect } from "react";
 import { StyleSheet, Text, Keyboard, TouchableOpacity, View, TouchableWithoutFeedback } from "react-native";
 import { Button, Input } from "react-native-elements";
 import { Feather } from "@expo/vector-icons";
-import {initGeoCalcDB, writeData, setupDataListener} from '../helpers/fb-geocalculator';
+import {initGeoCalcDB, storeDataItem, setupDataListener, updateDataItem, deleteDataItem} from '../helpers/fb-geocalculator';
 
 
 
@@ -29,31 +29,18 @@ const CalculatorScreen = ({ route, navigation }) => {
       doCalculation(route.params.selectedDistanceUnits, route.params.selectedBearingUnits);
     }
   }, [route.params?.selectedDistanceUnits]);
-/*
-  useEffect(() => {
-    if (route.params?.lat1){
-      useState(route.params.lat1);
-    }
-  }, [route.params?.lat1]);
 
   useEffect(() => {
-    if (route.params?.lat2){
-      useState(route.params.lat2);
+    if(route.params?.history){
+      setState({
+        lat1: route.params.lat1.toString(),
+        lon1: route.params.lon1.toString(),
+        lat2: route.params.lat2.toString(),
+        lon2: route.params.lon2.toString(),
+      })
     }
-  }, [route.params?.lat2]);
+  }, [route.params?.history]);
 
-  useEffect(() => {
-    if (route.params?.lon1){
-      useState(route.params.lon1);
-    }
-  }, [route.params?.lon1]);
-
-  useEffect(() => {
-    if (route.params?.lon2){
-      useState(route.params.lon2);
-    }
-  }, [route.params?.lon2]);
-*/
   useEffect(() => {
     try {
       initGeoCalcDB();

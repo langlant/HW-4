@@ -4,18 +4,40 @@ import { firebaseConfig } from './fb-credentials';
 
 export function initGeoCalcDB()
 {
-    firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 }
 
-export function writeData(key,data){
-    firebase.database.ref(`calculatorData/${key}`).set(data);
+export function storeDataItem(item) {
+  firebase.database().ref('geocalcData/').push(item);
 }
 
-export function setupDataListener(key){
-    firebase
-        .database()
-        .ref(`calculatorData/${key}`)
-        .on('value', (snapshot) => {
-            console.log('data listener fires up with: ', snapshot);
+export function updateDataItem(item) {
+  const key = item.id;
+  delete item.id;
+  firebase.database().ref(`geocalcData/${key}`).set(item);
+}
+
+export function deleteDataItem(item) {
+  firebase.database().ref(`geocalcData/${item.id}`).remove();
+}
+
+export function setupDataListener(updateFunc) {
+  console.log('setupReminderListener called');
+  firebase
+    .database()
+    .ref('geocalcData/')
+    .on('value', (snapshot) => {
+      console.log('setupReminderListener fires up with: ', snapshot);
+      if (snapshot?.val()) {
+        const fbObject = snapshot.val();
+        const newArr = [];
+        Object.keys(fbObject).map((key, index) => {
+          console.log(key, '||', index, '||', fbObject[key]);
+          newArr.push({ ...fbObject[key], id: key });
         });
-}
+        updateFunc(newArr);
+      } else {
+        updateFunc([]);
+      }
+    });
+} 
