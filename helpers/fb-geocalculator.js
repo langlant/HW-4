@@ -8,7 +8,7 @@ export function initGeoCalcDB()
 }
 
 export function writeData(key,data){
-    firebase.database.ref(`calculatorData/${key}`).set(data);
+    firebase.database.ref(`currentHistory/${key}`).set(data);
 }
 
 export function setupDataListener(key){
@@ -19,5 +19,3 @@ export function setupDataListener(key){
             console.log('data listener fires up with: ', snapshot);
         });
 }
-
-export default fb-geocalculator;
