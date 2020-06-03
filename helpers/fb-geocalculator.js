@@ -19,3 +19,5 @@ export function setupDataListener(key){
             console.log('data listener fires up with: ', snapshot);
         });
 }
+
+export default fb-geocalculator;
