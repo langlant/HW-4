@@ -8,7 +8,7 @@ export function initGeoCalcDB()
 }
 
 export function writeData(key,data){
-    firebase.database().ref(`calculatorData/${key}`).set(data);
+    firebase.database.ref(`calculatorData/${key}`).set(data);
 }
 
 export function setupDataListener(key){

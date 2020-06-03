@@ -60,7 +60,9 @@ const CalculatorScreen = ({ route, navigation }) => {
     } catch (err) {
       console.log(err);
     }
-    setupDataListener('score');
+    setupDataListener((items) => {
+   
+    });
   }, []);
 
   // Converts from degrees to radians.
