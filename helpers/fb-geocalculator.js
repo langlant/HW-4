@@ -8,13 +8,13 @@ export function initGeoCalcDb()
 }
 
 export function writeData(key,data){
-    firebase.database.ref(`reminderData/${key}`).set(data);
+    firebase.database.ref(`calculatorData/${key}`).set(data);
 }
 
 export function setupDataListener(key){
     firebase
         .database()
-        .ref(`reminderData/${key}`)
+        .ref(`calculatorData/${key}`)
         .on('value', (snapshot) => {
             console.log('data listener fires up with: ', snapshot);
         });

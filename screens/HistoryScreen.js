@@ -33,7 +33,10 @@ const HistoryScreen = ({ route, navigation }) => {
             data = {currentHistory}
             renderItem={({index, item}) =>{
                 return(
+                    <View>
                     <Text> {item.timestamp} </Text>
+                    <Text> {item.lat1} </Text>
+                    </View>
                 )
             }}
             />

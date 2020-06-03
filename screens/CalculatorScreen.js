@@ -56,7 +56,7 @@ const CalculatorScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     try {
-      initGeoCalcDb();
+      initGeoCalc();
     } catch (err) {
       console.log(err);
     }
@@ -175,6 +175,7 @@ const CalculatorScreen = ({ route, navigation }) => {
             selectedDistanceUnits,
             selectedBearingUnits,
           });
+          writeData('score', {lat1}, {lon1}, {lat2}, {lon2});
         }}
       >
         <Text style={styles.headerButton}> Save </Text>
