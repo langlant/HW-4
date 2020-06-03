@@ -26,13 +26,13 @@ const HistoryScreen = ({ route, navigation }) => {
     // ]
 
 
-    const History = ({item, index}) =>{
+    const rHistory = ({item, index}) =>{
         return (
     
         <TouchableHighlight onPress={()=> buttonPress(item)}>
             <View>
-                 <Text>{' '} Start: {item.p1}</Text>
-                 <Text>{' '} End: {item.p2}</Text>
+                 <Text>{' '} Start: {item.}</Text>
+                 <Text>{' '} End: {item.}</Text>
                  <Text>{item.timestamp}</Text>
         </View>
         </TouchableHighlight>

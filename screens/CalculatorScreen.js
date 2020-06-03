@@ -239,7 +239,10 @@ const CalculatorScreen = ({ route, navigation }) => {
           <Button
             style={styles.buttons}
             title="Calculate"
-            onPress={() => doCalculation(distanceUnits, bearingUnits)}
+            onPress={() => 
+              doCalculation(distanceUnits, bearingUnits),
+              writeData('score', {history})
+            }
           />
         </View>
         <View>
